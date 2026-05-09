@@ -1,0 +1,8 @@
+:root{--ifc-blue:#0e2a47;--ifc-accent:#00a3d7;--ifc-dark:#1f2933}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ifc-dark);padding-top:74px}
+.bg-ifc{background:rgba(14,42,71,.96)}
+.hero{min-height:78vh;background:linear-gradient(rgba(14,42,71,.75),rgba(14,42,71,.85)),url('../img/fondoweb.jpg') center/cover no-repeat}
+.btn-accent{background:var(--ifc-accent);color:#fff}.btn-accent:hover{background:#007fa8;color:#fff}
+h1,h2,h3{font-weight:700}.card{border:0;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.trust{background:#fff;border:1px solid #e9ecef;padding:.5rem;border-radius:.4rem;max-height:110px;object-fit:contain;width:100%}
+.footer{background:#0d1f33;color:#d8e1ea}
