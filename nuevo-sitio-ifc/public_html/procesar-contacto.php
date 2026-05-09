@@ -1,8 +1,0 @@
-<?php require __DIR__.'/includes/config.php'; require __DIR__.'/includes/helpers.php'; if($_SERVER['REQUEST_METHOD']!=='POST'){http_response_code(405);exit;} if(!rate_limit_ok()||!csrf_valid($_POST['csrf_token']??null)||!empty($_POST['website']??'')){header('Location:/error.php');exit;}
-$empresa=clean($_POST['nempresa']??'',120);$rut=clean($_POST['rutempresa']??'',25);$nombre=clean($_POST['ncliente']??'',120);$email=clean($_POST['corrcliente']??'',180);$tel=clean($_POST['telcliente']??'',40);$msg=clean($_POST['mensajecliente']??'',2000);
-if(!$empresa||!$nombre||!$msg||!filter_var($email,FILTER_VALIDATE_EMAIL)){header('Location:/error.php');exit;}
-if(ENABLE_TURNSTILE){$resp=$_POST['cf-turnstile-response']??'';if(!$resp){header('Location:/error.php');exit;}}
-$body="Empresa: $empresa\nRUT: $rut\nNombre: $nombre\nEmail: $email\nTel: $tel\n\n$msg"; $ok=false;
-if(USE_SMTP && file_exists(__DIR__.'/assets/vendor/phpmailer/src/PHPMailer.php')){require __DIR__.'/assets/vendor/phpmailer/src/PHPMailer.php';require __DIR__.'/assets/vendor/phpmailer/src/SMTP.php';require __DIR__.'/assets/vendor/phpmailer/src/Exception.php';$m=new PHPMailer\PHPMailer\PHPMailer(true);try{$m->isSMTP();$m->Host=SMTP_HOST;$m->SMTPAuth=true;$m->Username=SMTP_USER;$m->Password=SMTP_PASS;$m->Port=SMTP_PORT;$m->SMTPSecure=SMTP_SECURE;$m->setFrom(MAIL_FROM,'Web IFC');$m->addAddress(MAIL_TO);$m->addReplyTo($email,$nombre);$m->Subject='Contacto web IFC';$m->Body=$body;$ok=$m->send();}catch(Throwable $e){error_log('IFC mail error');}}
-if(!$ok && ALLOW_MAIL_FALLBACK){$ok=@mail(MAIL_TO,'Contacto web IFC',$body,'From: '.MAIL_FROM."\r\nReply-To: $email");}
-header('Location:'.($ok?'/gracias.php':'/error.php'));

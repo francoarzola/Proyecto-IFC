@@ -1,1 +1,0 @@
-<footer><p><strong>IFC Iluminación Minera</strong></p><p>Celular: <?=e(CONTACT_PHONE)?> | Dirección: <?=e(CONTACT_ADDRESS)?></p><p><a href="<?=e(FACEBOOK_URL)?>" target="_blank" rel="noopener">Facebook</a></p></footer><script src="/assets/js/main.js" defer></script></body></html>

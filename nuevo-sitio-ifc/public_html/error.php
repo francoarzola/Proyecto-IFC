@@ -1,1 +1,0 @@
-<?php $title='Error de envío | IFC';$description='No fue posible enviar su mensaje';$canonical='error.php';require __DIR__.'/includes/header.php'; ?><h1>No fue posible enviar su mensaje</h1><p>Por favor intente nuevamente o contáctenos al <?=e(CONTACT_PHONE)?>.</p><?php require __DIR__.'/includes/footer.php'; ?>

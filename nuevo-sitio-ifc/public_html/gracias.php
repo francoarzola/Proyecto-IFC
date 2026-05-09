@@ -1,1 +1,0 @@
-<?php $title='Gracias | IFC';$description='Mensaje enviado';$canonical='gracias.php';require __DIR__.'/includes/header.php'; ?><h1>Gracias por su mensaje</h1><p>Su solicitud fue enviada correctamente.</p><?php require __DIR__.'/includes/footer.php'; ?>
