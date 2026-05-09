@@ -1,0 +1,10 @@
+# /public_html/signature/.htaccess
+# Esta carpeta sirve logos de firma sin restricciones de Referer
+
+# Asegurar acceso a archivos de imagen
+<FilesMatch "\.(?:png|jpe?g|gif|bmp|webp|svg)$">
+  Require all granted
+</FilesMatch>
+
+# Si el servidor usa las reglas de hotlink del raíz, la excepción de ruta ya nos cubre.
+# No añadimos más Rewrite aquí para evitar choques con el raíz.
