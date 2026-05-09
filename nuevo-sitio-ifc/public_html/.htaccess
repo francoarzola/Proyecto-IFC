@@ -1,0 +1,21 @@
+Options -Indexes
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^includes/ - [F,L]
+<FilesMatch "(?i)\.(log|sql|bak|old|zip|tar|gz|psd)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "(?i)^(\.env|composer\.(json|lock)|mail[123]\.php|error_log|\.ftpquota)$">
+  Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+</IfModule>
+ErrorDocument 404 /404.php

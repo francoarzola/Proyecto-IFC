@@ -1,0 +1,3 @@
+<?php $title='Tecnología | IFC'; $desc='Tecnología aplicada a ambientes industriales con foco en seguridad, eficiencia y continuidad.'; $canonical='tecnologia.php'; require __DIR__.'/includes/header.php'; ?>
+<h1>Tecnología aplicada</h1><p>Impulsamos soluciones tecnológicas orientadas a mejorar seguridad, eficiencia y continuidad en operaciones industriales y mineras.</p><h2>Adaptación a faenas</h2><p>Evaluamos requerimientos operativos para proponer alternativas consistentes con las condiciones del entorno.</p><h2>Mejora continua</h2><p>Promovemos actualización tecnológica y soporte para procesos de modernización y abastecimiento técnico.</p>
+<?php require __DIR__.'/includes/footer.php'; ?>
