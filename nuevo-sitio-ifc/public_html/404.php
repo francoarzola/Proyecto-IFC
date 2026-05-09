@@ -1,0 +1,1 @@
+<?php http_response_code(404);$title='404 | IFC';$description='Página no encontrada';$canonical='404.php';require __DIR__.'/includes/header.php'; ?><h1>Error 404</h1><p>La página solicitada no existe.</p><p><a href="/index.php">Volver al inicio</a></p><?php require __DIR__.'/includes/footer.php'; ?>

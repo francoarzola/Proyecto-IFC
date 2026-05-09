@@ -1,0 +1,3 @@
+<?php $title='Tecnología | IFC Soluciones';$description='Tecnología e innovación aplicada para faenas e industria.';$canonical='tecnologia.php';require __DIR__.'/includes/header.php'; ?>
+<h1>Tecnología aplicada</h1><p>IFC integra tecnología para mejorar seguridad, eficiencia y continuidad operacional en minería e industria.</p><section class="grid"><?php foreach(['tecnologia.png','tecnologia1.png','tecnologia2.png','tecnologia3.png','tecnologia4.png'] as $t): ?><img src="/assets/img/institucional/<?=$t?>" alt="Tecnología IFC" width="280" height="170" loading="lazy"><?php endforeach; ?></section>
+<?php require __DIR__.'/includes/footer.php'; ?>
