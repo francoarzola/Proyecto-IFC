@@ -1,0 +1,3 @@
+<?php $title='Nuestros Clientes | IFC';$description='Clientes y empresas relacionadas con IFC.';$canonical='clientes.php';require __DIR__.'/includes/header.php'; $logos=glob(__DIR__.'/assets/img/clientes/*'); ?>
+<h1>Nuestros Clientes</h1><p>Algunas empresas presentes en el material histórico de IFC:</p><section class="grid"><?php foreach($logos as $logo){$base=basename($logo);?><img src="/assets/img/clientes/<?=rawurlencode($base)?>" alt="Cliente IFC <?=e(pathinfo($base,PATHINFO_FILENAME))?>" width="220" height="140" loading="lazy"><?php } ?></section>
+<?php require __DIR__.'/includes/footer.php'; ?>

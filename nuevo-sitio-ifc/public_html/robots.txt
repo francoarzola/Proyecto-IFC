@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /includes/
+Disallow: /private/
+Disallow: /vendor/
+Disallow: /tmp/
+Disallow: /logs/
+
+Sitemap: https://ifcsoluciones.cl/sitemap.xml
